@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Malla Curricular - Trabajo Social UAH</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Comic Neue', cursive;
+      background-color: #ffe6f0;
+      margin: 0;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      color: #d63384;
+      font-size: 2.2rem;
+    }
+    h1::before {
+      content: "🎀 ";
+    }
+    .malla {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .semestre {
+      background-color: #fff0f6;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(255, 105, 180, 0.2);
+      padding: 1rem;
+      border: 2px dashed #ff69b4;
+    }
+    .semestre h2 {
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      color: #c2185b;
+      border-bottom: 2px dotted #f8bbd0;
+      padding-bottom: 0.3rem;
+      text-align: center;
+    }
+    .ramo {
+      background-color: #fff;
+      color: #c2185b;
+      padding: 0.6rem;
+      margin: 0.3rem 0;
+      border-radius: 10px;
+      border: 1px solid #f48fb1;
+      cursor: pointer;
+      transition: background-color 0.3s ease, text-decoration 0.3s ease;
+    }
+    .ramo:hover {
+      background-color: #fce4ec;
+    }
+    .ramo.completado {
+      text-decoration: line-through;
+      background-color: #ffe0eb;
+      color: #e91e63;
+      font-weight: bold;
+    }
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      color: #ad1457;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Malla Interactiva - Alyncita UAH</h1>
+
+  <div class="malla">
+    <div class="semestre">
+      <h2>1° Semestre</h2>
+      <div class="ramo" onclick="toggle(this)">Historia Social y Política de América Latina</div>
+      <div class="ramo" onclick="toggle(this)">Claves del Pensamiento Filosófico</div>
+      <div class="ramo" onclick="toggle(this)">Sociología</div>
+      <div class="ramo" onclick="toggle(this)">Habilidades de Escritura Académica</div>
+      <div class="ramo" onclick="toggle(this)">Optativo Formación General</div>
+    </div>
+    <div class="semestre">
+      <h2>2° Semestre</h2>
+      <div class="ramo" onclick="toggle(this)">Introducción a la Ciencia Política</div>
+      <div class="ramo" onclick="toggle(this)">Introducción a la Economía</div>
+      <div class="ramo" onclick="toggle(this)">Psicología</div>
+      <div class="ramo" onclick="toggle(this)">Introducción al Trabajo Social</div>
+      <div class="ramo" onclick="toggle(this)">Optativo Formación Teológica</div>
+      <div class="ramo" onclick="toggle(this)">Inglés I</div> 
+    </div>
+    <div class="semestre">
+      <h2>3° Semestre</h2>
+      <div class="ramo" onclick="toggle(this)">Trabajo Social y Desarrollo Territorial</div>
+      <div class="ramo" onclick="toggle(this)">Sistemas Jurídicos de la Intervención Social</div>
+      <div class="ramo" onclick="toggle(this)">Sujetos de la Acción Social</div>
+      <div class="ramo" onclick="toggle(this)">Intervención Social IA</div>
+      <div class="ramo" onclick="toggle(this)">Optativo Formación Complementaria</div>
+      <div class="ramo" onclick="toggle(this)">Inglés II</div>
+    </div>
+    <div class="semestre">
+      <h2>4° Semestre</h2>
+      <div class="ramo" onclick="toggle(this)">Estrategias de Intervención Social</div>
+      <div class="ramo" onclick="toggle(this)">Habilidades Psicosociales</div>
+      <div class="ramo" onclick="toggle(this)">Teoría de la Acción Social</div>
+      <div class="ramo" onclick="toggle(this)">Optativo Formación Teológica</div>
+    </div>
+    <div class="semestre">
+      <h2>5° Semestre</h2>
+      <div class="ramo" onclick="toggle(this)">Lógicas de la Investigación e Intervención Social</div>
+      <div class="ramo" onclick="toggle(this)">Antropología Sociocultural</div>
+      <div class="ramo" onclick="toggle(this)">Economía Social</div>
+      <div class="ramo" onclick="toggle(this)">Diseño de Proyectos Sociales</div>
+      <div class="ramo" onclick="toggle(this)">Optativo Formación Complementaria</div>
+    </div>
+    <div class="semestre">
+      <h2>6° Semestre</h2>
+      <div class="ramo" onclick="toggle(this)">Intro. a las Metodologías de Investigación Social</div>
+      <div class="ramo" onclick="toggle(this)">Intervención Social IB</div>
+      <div class="ramo" onclick="toggle(this)">Intervención Social IIA</div>
+      <div class="ramo" onclick="toggle(this)">Epistemología</div>
+      <div class="ramo" onclick="toggle(this)">Optativo Formación Complementaria</div>
+    </div>
+    <div class="semestre">
+      <h2>7° Semestre</h2>
+      <div class="ramo" onclick="toggle(this)">Metodologías de Investigación Cuantitativa</div>
+      <div class="ramo" onclick="toggle(this)">Análisis de Datos Cuantitativos</div>
+      <div class="ramo" onclick="toggle(this)">Seminario de Investigación I</div>
+      <div class="ramo" onclick="toggle(this)">Intervención Social IIB</div>
+      <div class="ramo" onclick="toggle(this)">Optativo Formación Complementaria</div>
+    </div>
+    <div class="semestre">
+      <h2>8° Semestre</h2>
+      <div class="ramo" onclick="toggle(this)">Análisis de Datos Cualitativos</div>
+      <div class="ramo" onclick="toggle(this)">Seminario de Investigación II</div>
+      <div class="ramo" onclick="toggle(this)">Intervención Social IIIA</div>
+      <div class="ramo" onclick="toggle(this)">Políticas Sociales y Familia</div>
+      <div class="ramo" onclick="toggle(this)">Optativo Formación Complementaria</div>
+    </div>
+    <div class="semestre">
+      <h2>9° Semestre</h2>
+      <div class="ramo" onclick="toggle(this)">Ética de la Intervención Social</div>
+      <div class="ramo" onclick="toggle(this)">Intervención Social IIIB</div>
+      <div class="ramo" onclick="toggle(this)">Evaluación de Proyectos Sociales</div>
+    </div>
+    <div class="semestre">
+      <h2>10° Semestre</h2>
+      <div class="ramo" onclick="toggle(this)">Trabajo Social y Salud Mental</div>
+      <div class="ramo" onclick="toggle(this)">Pobreza e Intervención Social</div>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Malla Alyncita - Trabajo Social UAH 🎀
+  </footer>
+
+  <script>
+    const prerequisitos = {
+      "Inglés II": ["Inglés I"],
+      "Intervención Social IA": ["Habilidades Psicosociales"],
+      "Evaluación de Proyectos Sociales": ["Diseño de Proyectos Sociales"],
+      "Metodologías de Investigación Cuantitativa": ["Intro. a las Metodologías de Investigación Social"],
+      "Análisis de Datos Cuantitativos": ["Metodologías de Investigación Cuantitativa"],
+      "Metodologías de Investigación Cualitativa": ["Intro. a las Metodologías de Investigación Social"],
+      "Análisis de Datos Cualitativos": ["Metodologías de Investigación Cualitativa"],
+      "Seminario de Investigación II": ["Seminario de Investigación I"],
+      "Intervención Social IB": ["Intervención Social IA"],
+      "Intervención Social IIA": ["Intervención Social IB"],
+      "Intervención Social IIB": ["Intervención Social IIA"],
+      "Intervención Social IIIA": ["Intervención Social IIB"],
+      "Intervención Social IIIB": ["Intervención Social IIIA"]
+    };
+
+    function toggle(elemento) {
+      const ramo = elemento.innerText.trim();
+
+      if (elemento.classList.contains("completado")) {
+        elemento.classList.remove("completado");
+        return;
+      }
+
+      if (prerequisitos[ramo]) {
+        const todosPasados = prerequisitos[ramo].every(nombre => {
+          const ramoDom = Array.from(document.querySelectorAll('.ramo')).find(el => el.innerText.trim() === nombre);
+          return ramoDom && ramoDom.classList.contains("completado");
+        });
+
+        if (!todosPasados) {
+          alert(`🎀 No puedes completar "${ramo}" hasta aprobar todos sus prerrequisitos:\n- ${prerequisitos[ramo].join("\n- ")}`);
+          return;
+        }
+      }
+
+      elemento.classList.add("completado");
+    }
+  </script>
+</body>
+</html>
