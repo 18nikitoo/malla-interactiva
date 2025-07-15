@@ -51,6 +51,7 @@
       border: 1px solid #f48fb1;
       cursor: pointer;
       transition: background-color 0.3s ease, text-decoration 0.3s ease;
+      user-select: none;
     }
     .ramo:hover {
       background-color: #fce4ec;
@@ -156,6 +157,7 @@
   </footer>
 
   <script>
+    // Definición de prerrequisitos (dependencias)
     const prerequisitos = {
       "Inglés II": ["Inglés I"],
       "Intervención Social IA": ["Habilidades Psicosociales"],
@@ -172,14 +174,28 @@
       "Intervención Social IIIB": ["Intervención Social IIIA"]
     };
 
+    // Guarda en localStorage el estado actual
+    function guardarEstado(ramo, estado) {
+      localStorage.setItem(ramo, estado);
+    }
+
+    // Recupera el estado guardado
+    function obtenerEstado(ramo) {
+      return localStorage.getItem(ramo);
+    }
+
+    // Función para marcar o desmarcar el ramo, con validación y guardado
     function toggle(elemento) {
       const ramo = elemento.innerText.trim();
 
       if (elemento.classList.contains("completado")) {
+        // Si ya estaba completado, lo desmarcamos y guardamos
         elemento.classList.remove("completado");
+        guardarEstado(ramo, "pendiente");
         return;
       }
 
+      // Validar prerrequisitos
       if (prerequisitos[ramo]) {
         const todosPasados = prerequisitos[ramo].every(nombre => {
           const ramoDom = Array.from(document.querySelectorAll('.ramo')).find(el => el.innerText.trim() === nombre);
@@ -192,8 +208,20 @@
         }
       }
 
+      // Marcar y guardar
       elemento.classList.add("completado");
+      guardarEstado(ramo, "completado");
     }
+
+    // Al cargar la página, restaurar estado de cada ramo desde localStorage
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".ramo").forEach(elemento => {
+        const ramo = elemento.innerText.trim();
+        if (obtenerEstado(ramo) === "completado") {
+          elemento.classList.add("completado");
+        }
+      });
+    });
   </script>
 </body>
 </html>
